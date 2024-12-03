@@ -17,6 +17,13 @@ spring:
           filters:
             - CustomFilter
 
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order-service/**
+          filters:
+            - CustomFilter
+
         - id: catalog-service
           uri: lb://CATALOG-SERVICE
           predicates:
